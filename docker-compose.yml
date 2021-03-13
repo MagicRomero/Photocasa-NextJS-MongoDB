@@ -7,14 +7,17 @@ services:
     tty: true
     restart: unless-stopped
     environment:
+      - MONGO_INITDB_DATABASE=photocasa
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=password
       - PUID=1000
       - PGID=1000
     volumes:
       - mongodb-data:/data/db
+      - mongodb-config:/data/configdb
     ports:
       - "27018:27017"
 
 volumes:
   mongodb-data:
+  mongodb-config:
