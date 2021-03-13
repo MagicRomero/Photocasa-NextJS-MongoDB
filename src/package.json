@@ -1,6 +1,6 @@
 {
-  "name": "with-typescript-eslint-jest",
-  "author": "@erikdstock",
+  "name": "photocasa",
+  "author": "@magicromero",
   "license": "MIT",
   "version": "1.0.0",
   "scripts": {
@@ -26,6 +26,7 @@
     ]
   },
   "dependencies": {
+    "mongodb": "^3.6.4",
     "next": "latest",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
@@ -33,6 +34,7 @@
   "devDependencies": {
     "@testing-library/react": "^11.2.5",
     "@types/jest": "^26.0.20",
+    "@types/mongodb": "^3.6.9",
     "@types/node": "^14.14.25",
     "@types/react": "^17.0.1",
     "@typescript-eslint/eslint-plugin": "^4.14.2",
