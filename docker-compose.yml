@@ -1,23 +1,20 @@
 version: "3.8"
 
 services:
-  mongodb:
-    container_name: mongodb
+  mongo:
+    container_name: mongo
     image: mongo:latest
-    tty: true
     restart: unless-stopped
     environment:
       - MONGO_INITDB_DATABASE=photocasa
       - MONGO_INITDB_ROOT_USERNAME=root
-      - MONGO_INITDB_ROOT_PASSWORD=password
+      - MONGO_INITDB_ROOT_PASSWORD=secret
+      - MONGO_NON_ROOT_USERNAME=daniel
+      - MONGO_NON_ROOT_PASSWORD=secret
       - PUID=1000
       - PGID=1000
     volumes:
-      - mongodb-data:/data/db
-      - mongodb-config:/data/configdb
+      - "./mongodb-data:/data/db"
+      - "./scripts/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d"
     ports:
       - "27018:27017"
-
-volumes:
-  mongodb-data:
-  mongodb-config:
